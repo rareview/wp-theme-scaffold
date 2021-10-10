@@ -1,0 +1,21 @@
+{
+	"name": "rareview/wpthemescaffold",
+	"type": "wp-theme",
+	"autoload": {
+		"psr-4": {
+			"WPThemeScaffold\\Theme\\": "lib/"
+		}
+	},
+	"minimum-stability": "dev",
+	"prefer-stable": true,
+	"require": {
+		"php": ">=7.0"
+	},
+	"require-dev": {
+		"dealerdirect/phpcodesniffer-composer-installer": "^0.7.0"
+	},
+	"scripts": {
+		"lint": "phpcs",
+		"lint:fix": "phpcbf"
+	}
+}

@@ -1,6 +1,6 @@
 # wp-theme-scaffold
 
-Kickstart your next Rareview WordPress project with this barebones theme scaffold.
+Kickstart your next WordPress project with this barebones theme scaffold.
 
 ## Goals of this project
 

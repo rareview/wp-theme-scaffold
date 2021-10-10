@@ -1,0 +1,8 @@
+node_modules
+vendor
+
+# Editors
+.vscode
+
+# macOS
+.DS_Store
