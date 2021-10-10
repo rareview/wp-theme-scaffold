@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "description": "Kickstart your next WordPress project with this barebones theme scaffold.",
   "scripts": {
-    "setup": "npm install && composer install"
+    "setup": "npm install && composer install",
+	"reset": "rm -drf node_modules vendor"
   },
   "repository": {
     "type": "git",
