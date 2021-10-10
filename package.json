@@ -14,5 +14,8 @@
   "bugs": {
     "url": "https://github.com/rareview/wp-theme-scaffold/issues"
   },
-  "homepage": "https://github.com/rareview/wp-theme-scaffold#readme"
+  "homepage": "https://github.com/rareview/wp-theme-scaffold#readme",
+  "devDependencies": {
+    "webpack": "^5.58.1"
+  }
 }
