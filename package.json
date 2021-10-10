@@ -1,0 +1,18 @@
+{
+  "name": "wp-theme-scaffold",
+  "version": "0.1.0",
+  "description": "Kickstart your next WordPress project with this barebones theme scaffold.",
+  "scripts": {
+    "setup": "npm install && composer install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rareview/wp-theme-scaffold.git"
+  },
+  "author": "Rareview <hello@rareview.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rareview/wp-theme-scaffold/issues"
+  },
+  "homepage": "https://github.com/rareview/wp-theme-scaffold#readme"
+}
