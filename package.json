@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/rareview/wp-theme-scaffold#readme",
   "devDependencies": {
+    "@wordpress/babel-preset-default": "^6.3.3",
     "css-loader": "^6.4.0",
     "csso-webpack-plugin": "*",
     "mini-css-extract-plugin": "^2.4.2",
