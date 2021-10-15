@@ -1,0 +1,16 @@
+/**
+ * Theme - all these styles are loaded on front end.
+ *
+ */
+
+/*
+ * Modern CSS Reset
+ *
+ */
+@import url("base/reset");
+
+/* Global - global pieces like media queries, mixins. */
+@import url("../shared/config/media-queries");
+
+/* Components */
+@import url("components/site-header/peekaboo");

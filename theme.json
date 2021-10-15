@@ -52,6 +52,27 @@
 					"medium": 1.4,
 					"normal": 1.6
 				}
+			},
+			"zIndex": {
+				"xs": -1,
+				"sm": 1,
+				"md": 5,
+				"lg": 10,
+				"xl": 15,
+				"xxl": 20,
+				"xxxl": 25
+			},
+			"siteHeader": {
+				"backgroundColor": "rgba(255, 255, 255, 0.4)",
+				"height": "auto",
+				"peekaboo": {
+					"opacity": {
+						"default": "0",
+						"down": "0.8",
+						"up": "0"
+					},
+					"transition": "all 95ms cubic-bezier(0.17, 0.67, 0.61, 0.34)"
+				}
 			}
 		},
 		"spacing": {
