@@ -73,6 +73,7 @@ const theme = {
 	entry : {
 		'frontend-css'  : path.resolve( __dirname, 'src/css/frontend/frontend.css' ),
 		'frontend-js'  : path.resolve( __dirname, 'src/js/frontend/index.js' ),
+		'debug-css'  : path.resolve( __dirname, 'src/css/debug/debug.css' ),
 	},
 
 	output : {

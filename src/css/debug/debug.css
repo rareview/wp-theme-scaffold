@@ -1,0 +1,24 @@
+/**
+ * For optimal Core Web Vitals - we want
+ * explicit height="" and width="" values on
+ * most of our images.
+ */
+img:not([width]),
+img:not([height]) {
+	filter: invert(1);
+}
+
+/**
+ * Look for lists that have something other
+ * than an <li> inside.
+ */
+:is(ul,ol) > *:not(li) {
+	outline: 2px dotted red;
+}
+
+/**
+ * Tables should have a caption.
+ */
+table > *:first-child:not(caption) {
+	outline: 2px dotted red;
+}
