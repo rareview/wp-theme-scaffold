@@ -21,7 +21,7 @@ const theme = {
 		minimize: !devMode,
 		minimizer: [
 			new OptimizeJS(
-				{ 
+				{
 					extractComments: true
 				}
 			),
@@ -72,6 +72,7 @@ const theme = {
 
 	entry : {
 		'frontend-css'  : path.resolve( __dirname, 'src/css/frontend/frontend.css' ),
+		'frontend-js'  : path.resolve( __dirname, 'src/js/frontend/index.js' ),
 	},
 
 	output : {
