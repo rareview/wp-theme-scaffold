@@ -1,0 +1,36 @@
+{
+    "extends": [
+        "@wordpress/stylelint-config"
+    ],
+    "plugins": [
+        "stylelint-declaration-strict-value",
+        "stylelint-order"
+    ],
+    "rules": {
+        "function-url-quotes": "always",
+        "no-descending-specificity": null,
+        "no-eol-whitespace": null,
+        "order/properties-alphabetical-order": true,
+        "scale-unlimited/declaration-strict-value": ["/color$/", {
+            "ignoreValues": ["currentColor", "transparent", "inherit"]
+        }],
+        "selector-class-pattern": null,
+        "selector-nested-pattern": "^&",
+        "at-rule-no-unknown": [
+            true,
+            {
+                "ignoreAtRules": [
+                    "mixin",
+                    "define-mixin"
+                ]
+            }
+        ],
+        "at-rule-empty-line-before": [
+            "always",
+            {
+                "ignoreAtRules": ["mixin", "import", "custom-media", "font-face"],
+                "except": ["first-nested"]
+            }
+        ]
+    }
+}

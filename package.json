@@ -5,7 +5,8 @@
   "scripts": {
     "setup": "npm install && composer install",
     "reset": "rm -drf node_modules vendor",
-    "dev": "webpack --watch"
+    "dev": "webpack --watch",
+    "lint:css": "stylelint 'src/**/*.css'"
   },
   "repository": {
     "type": "git",
@@ -19,6 +20,7 @@
   "homepage": "https://github.com/rareview/wp-theme-scaffold#readme",
   "devDependencies": {
     "@wordpress/babel-preset-default": "^6.3.3",
+    "@wordpress/stylelint-config": "^19.1.0",
     "babel-loader": "^8.2.2",
     "css-loader": "^6.4.0",
     "csso-webpack-plugin": "*",
@@ -30,6 +32,9 @@
     "postcss-loader": "^6.1.1",
     "postcss-nested": "^5.0.6",
     "postcss-preset-env": "^6.7.0",
+    "stylelint": "^13.13.1",
+    "stylelint-declaration-strict-value": "^1.7.12",
+    "stylelint-order": "^4.1.0",
     "terser-webpack-plugin": "^5.2.4",
     "webpack": "^5.58.1",
     "webpack-cli": "^4.9.0",
