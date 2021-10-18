@@ -28,6 +28,8 @@ Excludes:
 2. `mkdir your-theme-name && cd your-theme-name`
 3. `git clone https://github.com/rareview/wp-theme-scaffold.git .`
 4. Search and replace all instances of `WPThemeScaffold`, `WPTHEMESCAFFOLD`
+5. `npm run setup` to install Composer and npm packages
+6. `npm run dev` to watch and get started.
 
 ## Contributing
 
