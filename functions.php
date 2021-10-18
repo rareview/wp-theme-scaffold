@@ -4,8 +4,6 @@
  *
  * @package WordPress
  * @subpackage WPThemeScaffold
- *
- * @author Rareview <hello@rareview.com>
  */
 
 // Useful global constants.
