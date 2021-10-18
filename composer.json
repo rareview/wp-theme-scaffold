@@ -12,9 +12,18 @@
 		"php": ">=7.0"
 	},
 	"require-dev": {
-		"dealerdirect/phpcodesniffer-composer-installer": "^0.7.0"
+		"dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
+		"squizlabs/php_codesniffer": "^3.6",
+		"wp-coding-standards/wpcs": "^2.3",
+		"phpcompatibility/php-compatibility": "^9.3"
 	},
 	"scripts": {
+		"install-codestandards": [
+			"Dealerdirect\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\Plugin::run"
+		],
+		"post-install-cmd": [
+			"@install-codestandards"
+		],
 		"lint": "phpcs",
 		"lint:fix": "phpcbf"
 	}

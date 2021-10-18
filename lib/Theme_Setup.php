@@ -44,11 +44,11 @@ class Theme_Setup {
 		\add_theme_support( 'responsive-embeds' );
 
 		// Enable our usage of custom Block Editor styles.
-		// https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-support/#editor-styles
+		// https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-support/#editor-styles.
 		\add_theme_support( 'editor-styles' );
 
 		// Set target for Block Editor styles.
-		// https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-support/#enqueuing-the-editor-style
+		// https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-support/#enqueuing-the-editor-style.
 		\add_editor_style( 'editor.css' );
 
 		// Remove WP core's block patterns.
