@@ -6,7 +6,8 @@
     "setup": "npm install && composer install",
     "reset": "rm -drf node_modules vendor",
     "dev": "webpack --watch",
-    "lint:css": "stylelint 'src/**/*.css'"
+    "lint:css": "stylelint 'src/**/*.css'",
+    "lint:js": "eslint 'src/**/*.js'"
   },
   "repository": {
     "type": "git",
@@ -20,10 +21,12 @@
   "homepage": "https://github.com/rareview/wp-theme-scaffold#readme",
   "devDependencies": {
     "@wordpress/babel-preset-default": "^6.3.3",
+    "@wordpress/eslint-plugin": "^9.2.0",
     "@wordpress/stylelint-config": "^19.1.0",
     "babel-loader": "^8.2.2",
     "css-loader": "^6.4.0",
     "csso-webpack-plugin": "*",
+    "eslint": "^7.32.0",
     "eslint-loader": "^4.0.2",
     "mini-css-extract-plugin": "^2.4.2",
     "modern-css-reset": "^1.4.0",
