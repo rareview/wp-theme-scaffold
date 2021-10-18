@@ -7,7 +7,8 @@
     "reset": "rm -drf node_modules vendor",
     "dev": "webpack --watch",
     "lint:css": "stylelint 'src/**/*.css'",
-    "lint:js": "eslint 'src/**/*.js'"
+    "lint:js": "eslint 'src/**/*.js'",
+    "lint:php": "composer run-script lint"
   },
   "repository": {
     "type": "git",
