@@ -7,8 +7,6 @@
  *
  * @package WordPress
  * @subpackage WPThemeScaffold
- *
- * @author Rareview <hello@rareview.com>
  */
 
 namespace WPThemeScaffold\Theme;
