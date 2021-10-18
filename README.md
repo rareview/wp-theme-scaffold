@@ -1,3 +1,12 @@
+<style>
+img {
+	border: 1px solid #000;
+	object-fit: cover;
+	height: 192px;
+	width: 100%;
+}
+</style>
+
 # WP Theme Scaffold
 
 Kickstart your next WordPress project with this barebones theme scaffold.
