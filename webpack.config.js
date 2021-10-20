@@ -1,29 +1,30 @@
-const path          = require( 'path' );
-const ExtractCSS    = require( 'mini-css-extract-plugin' );
-const OptimizeCSS   = require( 'csso-webpack-plugin' ).default;
-const OptimizeJS    = require( 'terser-webpack-plugin' );
+const path = require( 'path' );
+const { CleanWebpackPlugin } = require( 'clean-webpack-plugin' );
+const CopyWebpackPlugin = require( 'copy-webpack-plugin' );
+const ExtractCSS = require( 'mini-css-extract-plugin' );
+const OptimizeCSS = require( 'csso-webpack-plugin' ).default;
+const OptimizeJS = require( 'terser-webpack-plugin' );
 const RemoveStyleJS = require( 'webpack-remove-empty-scripts' );
 
 const devMode = process.env.BUILD_MODEL !== 'release';
-const suffix  = devMode ? 'dev' : 'min';
 
 const theme = {
 	// Tells webpack to use its built-in optimizations accordingly.
-	mode: devMode ? "development" : "production",
+	mode         : devMode ? 'development' : 'production',
 	// Cache the generated webpack modules and chunks to improve build speed.
-	cache: devMode,
+	cache        : devMode,
 	// This option controls if and how source maps are generated.
-	devtool: devMode ? "source-map" : false,
+	devtool      : devMode ? 'source-map' : false,
 	// Lets you precisely control what bundle information gets displayed.
-	stats: devMode ? "normal" : "minimal",
+	stats        : devMode ? 'normal' : 'minimal',
 	// Finer control over webpack's built in optimizations based on chosen mode.
-	optimization: {
-		minimize: !devMode,
-		minimizer: [
+	optimization : {
+		minimize  : ! devMode,
+		minimizer : [
 			new OptimizeJS(
 				{
-					extractComments: true
-				}
+					extractComments : true,
+				},
 			),
 			new OptimizeCSS(),
 		],
@@ -31,8 +32,20 @@ const theme = {
 
 	plugins : [
 		new RemoveStyleJS(),
+		new CleanWebpackPlugin( {
+			cleanStaleWebpackAssets : false,
+		} ),
 		new ExtractCSS( {
 			filename : `[name].css`,
+		} ),
+		new CopyWebpackPlugin( {
+			patterns : [
+				{
+					from    : '**/*.{jpg,jpeg,png,gif,svg,eot,ttf,woff,woff2}',
+					to      : '[path][name][ext]',
+					context : path.resolve( __dirname, 'src' ),
+				},
+			],
 		} ),
 	],
 
@@ -71,9 +84,9 @@ const theme = {
 	},
 
 	entry : {
-		'frontend-css'  : path.resolve( __dirname, 'src/css/frontend/frontend.css' ),
+		'frontend-css' : path.resolve( __dirname, 'src/css/frontend/frontend.css' ),
 		'frontend-js'  : path.resolve( __dirname, 'src/js/frontend/index.js' ),
-		'debug-css'  : path.resolve( __dirname, 'src/css/debug/debug.css' ),
+		'debug-css'    : path.resolve( __dirname, 'src/css/debug/debug.css' ),
 	},
 
 	output : {
