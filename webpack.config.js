@@ -1,4 +1,6 @@
 const path = require( 'path' );
+const { CleanWebpackPlugin } = require( 'clean-webpack-plugin' );
+const CopyWebpackPlugin = require( 'copy-webpack-plugin' );
 const ExtractCSS = require( 'mini-css-extract-plugin' );
 const OptimizeCSS = require( 'csso-webpack-plugin' ).default;
 const OptimizeJS = require( 'terser-webpack-plugin' );
@@ -30,8 +32,20 @@ const theme = {
 
 	plugins : [
 		new RemoveStyleJS(),
+		new CleanWebpackPlugin( {
+			cleanStaleWebpackAssets : false,
+		} ),
 		new ExtractCSS( {
 			filename : `[name].css`,
+		} ),
+		new CopyWebpackPlugin( {
+			patterns : [
+				{
+					from    : '**/*.{jpg,jpeg,png,gif,svg,eot,ttf,woff,woff2}',
+					to      : '[path][name][ext]',
+					context : path.resolve( __dirname, 'src' ),
+				},
+			],
 		} ),
 	],
 
