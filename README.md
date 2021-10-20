@@ -1,6 +1,6 @@
 # WP Theme Scaffold
 
-Kickstart your next WordPress project with this barebones theme scaffold.
+Kickstart your next WordPress project with this [block theme](https://developer.wordpress.org/block-editor/how-to-guides/themes/block-theme-overview/) scaffold.
 
 Includes:
 
@@ -23,6 +23,8 @@ Excludes:
 2. Provide consistent engineering onboarding to match existing WordPress best practices.
 
 ## Installation
+
+**Important Note:** this theme currently requires the latest [Gutenberg plugin](https://wordpress.org/plugins/gutenberg/) be installed. However, we hope that will no longer be the case once [WordPress 5.9](https://make.wordpress.org/core/5-9/) is released (Dec. 2021).
 
 1. `cd wp-content/themes`
 2. `mkdir your-theme-name && cd your-theme-name`
