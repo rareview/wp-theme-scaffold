@@ -1,0 +1,28 @@
+/*
+ * Libre Franklin
+*/
+
+/* libre-franklin-200 - latin */
+@font-face {
+	font-display: swap;
+	font-family: "Libre Franklin";
+	font-style: normal;
+	font-weight: 200;
+	src: url("../dist/fonts/Libre_Franklin/libre-franklin-v7-latin-200.woff2") format("woff2");
+}
+/* libre-franklin-regular - latin */
+@font-face {
+	font-display: swap;
+	font-family: "Libre Franklin";
+	font-style: normal;
+	font-weight: 400;
+	src: url("../dist/fonts/Libre_Franklin/libre-franklin-v7-latin-regular.woff2") format("woff2");
+}
+/* libre-franklin-700 - latin */
+@font-face {
+	font-display: swap;
+	font-family: "Libre Franklin";
+	font-style: normal;
+	font-weight: 700;
+	src: url("../dist/fonts/Libre_Franklin/libre-franklin-v7-latin-700.woff2") format("woff2");
+}

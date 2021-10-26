@@ -36,20 +36,6 @@ class Asset_Pipeline {
 	 * @return void
 	 */
 	public static function frontend() {
-		// Register theme style.
-		\wp_register_style(
-			'theme-frontend',
-			'',
-			[],
-			WPTHEMESCAFFOLD_THEME_VERSION,
-		);
-
-		// Add inline style for fonts.
-		\wp_add_inline_style(
-			'theme-frontend',
-			self::get_font_face_styles(),
-		);
-
 		\wp_enqueue_style(
 			'theme-frontend',
 			get_template_directory_uri() . '/dist/frontend-css.css',
@@ -121,29 +107,4 @@ class Asset_Pipeline {
 			WPTHEMESCAFFOLD_THEME_VERSION,
 		);
 	}
-
-	/**
-	 * Get font face styles.
-	 *
-	 * @return string
-	 */
-	public function get_font_face_styles() {
-		return "
-		@font-face{
-			font-family: 'Karla';
-			font-weight: 200 800;
-			font-style: normal;
-			font-stretch: normal;
-			src: url('" . get_theme_file_uri( 'dist/fonts/karla-variablefont_wght-webfont.woff2' ) . "') format('woff2');
-		}
-		@font-face{
-			font-family: 'Karla';
-			font-weight: 200 800;
-			font-style: italic;
-			font-stretch: normal;
-			src: url('" . get_theme_file_uri( 'dist/fonts/karla-italic-variablefont_wght-webfont.woff2' ) . "') format('woff2');
-		}
-		";
-	}
-
 }
