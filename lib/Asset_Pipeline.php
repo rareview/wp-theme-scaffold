@@ -76,7 +76,7 @@ class Asset_Pipeline {
 		// Unregister WP core block styles.
 		wp_deregister_style( 'wp-block-group' );
 
-		if ( defined( 'WP_DEBUG_DISPLAY' ) ) {
+		if ( defined( 'WP_DEBUG_DISPLAY' ) && true === WP_DEBUG_DISPLAY ) {
 			\wp_enqueue_style(
 				'theme-debug',
 				get_template_directory_uri() . '/dist/debug-css.css',
