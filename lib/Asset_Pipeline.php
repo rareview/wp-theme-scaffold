@@ -20,8 +20,6 @@ class Asset_Pipeline {
 	public function __construct() {
 		// https://developer.wordpress.org/reference/hooks/wp_enqueue_scripts/.
 		\add_action( 'wp_enqueue_scripts', [ __CLASS__, 'frontend' ] );
-		// https://make.wordpress.org/core/2021/07/01/block-styles-loading-enhancements-in-wordpress-5-8/#inlining-small-assets.
-		\add_filter( 'styles_inline_size_limit', '__return_zero' );
 		// Selectively enqueue WP Admin styles.
 		\add_action( 'admin_enqueue_scripts', [ __CLASS__, 'admin' ] );
 		// Inline the theme's fonts in block editor.
