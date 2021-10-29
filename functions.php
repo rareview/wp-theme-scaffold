@@ -17,7 +17,6 @@ if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
 }
 
 new WPThemeScaffold\Theme\Cleanup_Core_Assets();
-new WPThemeScaffold\Theme\Theme_Setup();
 new WPThemeScaffold\Theme\Asset_Pipeline();
 
 /**
