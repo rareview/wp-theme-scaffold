@@ -92,9 +92,6 @@ class Asset_Pipeline {
 			wp_deregister_style( 'dashicons' );
 		}
 
-		// Unregister WP core block styles.
-		wp_deregister_style( 'wp-block-group' );
-
 		if ( defined( 'WP_DEBUG_DISPLAY' ) && true === WP_DEBUG_DISPLAY ) {
 			\wp_enqueue_style(
 				'theme-debug',
