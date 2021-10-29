@@ -20,8 +20,9 @@ class Asset_Pipeline {
 	public function __construct() {
 		// https://developer.wordpress.org/reference/hooks/wp_enqueue_scripts/.
 		\add_action( 'wp_enqueue_scripts', [ __CLASS__, 'frontend' ] );
-		// Selectively enqueue WP Admin styles.
-		\add_action( 'admin_enqueue_scripts', [ __CLASS__, 'admin' ] );
+		// Enqueue WP Admin scripts/styles.
+		// https://developer.wordpress.org/reference/hooks/admin_enqueue_scripts/.
+		\add_action( 'admin_enqueue_scripts', [ __CLASS__, 'wp_admin' ] );
 		// Inline the theme's fonts in block editor.
 		\add_action( 'admin_init', [ __CLASS__, 'block_editor_inline_fonts' ] );
 	}
@@ -105,7 +106,7 @@ class Asset_Pipeline {
 	}
 
 	/**
-	 * Enqueue WP Admin scripts, but be mindful of where you enqueue them.
+	 * Enqueue WP Admin scripts.
 	 *
 	 * @link https://developer.wordpress.org/reference/hooks/admin_enqueue_scripts/
 	 *
@@ -113,14 +114,10 @@ class Asset_Pipeline {
 	 *
 	 * @return void
 	 */
-	public static function admin( $hook ) {
-		if ( 'post.php' !== $hook && 'post-new.php' !== $hook ) {
-			return;
-		}
-
+	public static function wp_admin( $hook ) {
 		\wp_enqueue_style(
 			'theme-admin-styles',
-			get_template_directory_uri() . '/dist/admin-css.css',
+			get_template_directory_uri() . '/dist/wp-admin-css.css',
 			[],
 			WPTHEMESCAFFOLD_THEME_VERSION,
 		);
