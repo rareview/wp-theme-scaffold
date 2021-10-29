@@ -26,6 +26,8 @@ class Asset_Pipeline {
 		\add_filter( 'styles_inline_size_limit', '__return_zero' );
 		// Selectively enqueue WP Admin styles.
 		\add_action( 'admin_enqueue_scripts', [ __CLASS__, 'admin' ] );
+		// Inline the theme's fonts in block editor.
+		\add_action( 'admin_init', [ __CLASS__, 'block_editor_inline_fonts' ] );
 	}
 
 	/**
@@ -36,13 +38,33 @@ class Asset_Pipeline {
 	 * @return void
 	 */
 	public static function frontend() {
-		\wp_enqueue_style(
+		// Register style.
+		\wp_register_style(
 			'theme-frontend',
-			get_template_directory_uri() . '/dist/frontend-css.css',
-			[],
+			'',
+			'',
 			WPTHEMESCAFFOLD_THEME_VERSION,
 		);
 
+		// Add styles inline.
+		\wp_add_inline_style(
+			'theme-frontend',
+			self::get_font_face_styles(),
+		);
+
+		// Add metadata to stylesheet.
+		\wp_style_add_data(
+			'theme-frontend',
+			'path',
+			get_template_directory_uri() . '/dist/frontend-css.css',
+		);
+
+		// Enqueue style.
+		\wp_enqueue_style(
+			'theme-frontend',
+		);
+
+		// Enqueue script.
 		\wp_enqueue_script(
 			'theme-frontend',
 			get_template_directory_uri() . '/dist/frontend-js.js',
@@ -106,5 +128,51 @@ class Asset_Pipeline {
 			[],
 			WPTHEMESCAFFOLD_THEME_VERSION,
 		);
+	}
+
+	/**
+	 * Inline the theme's fonts in the block editor.
+	 *
+	 * @return void
+	 */
+	public static function block_editor_inline_fonts() {
+		wp_add_inline_style(
+			'wp-block-library',
+			self::get_font_face_styles()
+		);
+	}
+
+	/**
+	 * Get font face styles.
+	 *
+	 * @return string
+	 */
+	public static function get_font_face_styles() {
+		return "
+		/* libre-franklin-200 - latin */
+		@font-face {
+			font-display: swap;
+			font-family: 'Libre Franklin';
+			font-style: normal;
+			font-weight: 200;
+			src: url('" . get_theme_file_uri( 'dist/fonts/Libre_Franklin/libre-franklin-v7-latin-200.woff2' ) . "') format('woff2');
+		}
+		/* libre-franklin-regular - latin */
+		@font-face {
+			font-display: swap;
+			font-family: 'Libre Franklin';
+			font-style: normal;
+			font-weight: 400;
+			src: url('" . get_theme_file_uri( 'dist/fonts/Libre_Franklin/libre-franklin-v7-latin-regular.woff2' ) . "') format('woff2');
+		}
+		/* libre-franklin-700 - latin */
+		@font-face {
+			font-display: swap;
+			font-family: 'Libre Franklin';
+			font-style: normal;
+			font-weight: 700;
+			src: url('" . get_theme_file_uri( 'dist/fonts/Libre_Franklin/libre-franklin-v7-latin-700.woff2' ) . "') format('woff2');
+		}
+		";
 	}
 }
