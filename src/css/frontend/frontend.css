@@ -11,6 +11,7 @@
 
 /* Global - global pieces like media queries, mixins. */
 @import url("../shared/config/fonts");
+@import url("../shared/config/colors");
 @import url("../shared/config/media-queries");
 
 /* Components */
