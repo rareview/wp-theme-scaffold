@@ -1,0 +1,8 @@
+/**
+ * Theme - all these styles are loaded in block editor.
+ *
+ */
+
+/* Global - global pieces like media queries, mixins. */
+@import url("../shared/config/colors");
+@import url("../shared/config/media-queries");
